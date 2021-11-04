@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "4ddd4c52-5d48-4fef-834d-94e925701002",
+		"name": "API EASYENGLISH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USUARIOS",
+			"item": [
+				{
+					"name": "LISTAR",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}usuarios",
+							"host": [
+								"{{local}}usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CRIAR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Usuario",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "usuario@usuario.com",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}usuarios/criar",
+							"host": [
+								"{{local}}usuarios"
+							],
+							"path": [
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ATUALIZAR",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Titulo 5\",\r\n    \"subtitulo\": \"Subtitulo 5\",\r\n    \"descricao\": \"Descrição 5\",\r\n    \"tipo\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}conteudo/atualizar/5",
+							"host": [
+								"{{local}}conteudo"
+							],
+							"path": [
+								"atualizar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DETALHE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}conteudo/detalhe/1",
+							"host": [
+								"{{local}}conteudo"
+							],
+							"path": [
+								"detalhe",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}conteudo/remover/5",
+							"host": [
+								"{{local}}conteudo"
+							],
+							"path": [
+								"remover",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VERIFICAR TOKEN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local}}token/verificar_token",
+					"host": [
+						"{{local}}token"
+					],
+					"path": [
+						"verificar_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "graweb1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "senha",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}token/login",
+					"host": [
+						"{{local}}token"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local}}token/logout",
+					"host": [
+						"{{local}}token"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
